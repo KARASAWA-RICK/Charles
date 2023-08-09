@@ -1,0 +1,37 @@
+{
+  "general": {
+    "designResolution": {
+      "width": 1242,
+      "height": 2208,
+      "fitHeight": true,
+      "fitWidth": true
+    }
+  },
+  "physics": {
+    "collisionGroups": [
+      {
+        "index": 1,
+        "name": "Hero"
+      },
+      {
+        "index": 2,
+        "name": "Dot"
+      },
+      {
+        "index": 3,
+        "name": "Item"
+      },
+      {
+        "index": 4,
+        "name": "KillItem"
+      }
+    ],
+    "collisionMatrix": {
+      "0": 0,
+      "1": 12,
+      "2": 18,
+      "3": 2,
+      "4": 4
+    }
+  }
+}
