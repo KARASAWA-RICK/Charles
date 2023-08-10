@@ -8,7 +8,7 @@ import { eventTarget } from "./Global_WebSocket";
 import { session } from "./sessionMgr";
 
 //自己进入
-function onEnter(payLoad: any) {
+function onEnter(payLoad: any): void {
   if (payLoad == Respones.OK) {
     eventTarget.emit("showTipMsg", "你成功进入聊天室");
   } else if (payLoad == Respones.IS_IN_CHATROOM) {
