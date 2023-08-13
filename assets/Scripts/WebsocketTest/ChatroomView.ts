@@ -28,7 +28,7 @@ export class ChatroomView extends Component {
   //聊天室服务号
   stype: STYPE = STYPE.Chatroom;
   //服务器url
-  chatroomUrl: string = "ws://10.0.12.138:6085/ws";
+  chatroomUrl: string = "ws://127.0.0.1:6085/ws";
 
   //滚动视图
   @property(ScrollView)
