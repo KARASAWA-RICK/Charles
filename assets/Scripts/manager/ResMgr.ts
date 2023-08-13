@@ -2,6 +2,7 @@
 import { assetManager, AudioClip, instantiate, Node, SkinnedMeshRenderer, SpriteAtlas, } from "cc"
 import { Global, AssetType } from "../Global";
 import { PoolMgr } from "./PoolMgr";
+import { ConfigMgr } from "./ConfigMgr";
 
 export default class ResMgr {
     //存Bundle的对象
@@ -103,6 +104,7 @@ export default class ResMgr {
                     for (let i = 0; i < assets.length; i++) {
                         asset = assets[i];
                         Global.Debug && console.log("json name==", asset.name)//,asset.json.employee.name)
+                        ConfigMgr.ins.addTable(asset.name, asset.json);
                         if (!this._jsonAssetMap[asset.name]) this._jsonAssetMap[asset.name] = asset.json
                     }
                 }
