@@ -1,0 +1,116 @@
+{
+ "data": [
+  {
+   "team_use": 1.1, 
+   "initial_team": "0,0,0|0,0,0,0,0,0,0,0", 
+   "id": 1, 
+   "type_limit": "近战", 
+   "team_type": 1
+  }, 
+  {
+   "team_use": 1.0, 
+   "initial_team": "0,0,0,0,0,0,0,0,0,0", 
+   "id": 2, 
+   "type_limit": "近战", 
+   "team_type": 1
+  }, 
+  {
+   "team_use": 2.0, 
+   "initial_team": "0,0,0,0,0,0,0,0,0", 
+   "id": 3, 
+   "type_limit": "近战", 
+   "team_type": 1
+  }, 
+  {
+   "team_use": 2.0, 
+   "initial_team": "0,0,0,0,0,0,0,0,0", 
+   "id": 4, 
+   "type_limit": "远程", 
+   "team_type": 2
+  }, 
+  {
+   "team_use": 1.0, 
+   "initial_team": "0,0,0,0,0,0,0,0,0,0", 
+   "id": 5, 
+   "type_limit": "近战", 
+   "team_type": 1
+  }, 
+  {
+   "team_use": 1.0, 
+   "initial_team": "0,0,0,0,0,0,0,0,0,0", 
+   "id": 6, 
+   "type_limit": "近战", 
+   "team_type": 1
+  }, 
+  {
+   "team_use": 1.0, 
+   "initial_team": "0,0,0,0,0,0,0,0,0,0", 
+   "id": 7, 
+   "type_limit": "远程", 
+   "team_type": 1
+  }, 
+  {
+   "team_use": 1.0, 
+   "initial_team": "0,0,0,0,0,0,0,0,0,0", 
+   "id": 8, 
+   "type_limit": "近战", 
+   "team_type": 1
+  }, 
+  {
+   "team_use": 1.2, 
+   "initial_team": "0,0,0,0,0,0,0,0,0,0", 
+   "id": 9, 
+   "type_limit": "近战", 
+   "team_type": 1
+  }, 
+  {
+   "team_use": 1.0, 
+   "initial_team": "0,0,0,0,0,0,0,0,0,0", 
+   "id": 10, 
+   "type_limit": "近战", 
+   "team_type": 1
+  }, 
+  {
+   "team_use": 1.0, 
+   "initial_team": "0,0,0,0,0,0,0,0,0,0", 
+   "id": 11, 
+   "type_limit": "远程", 
+   "team_type": 1
+  }, 
+  {
+   "team_use": 1.0, 
+   "initial_team": "0,0,0,0,0,0,0,0,0,0", 
+   "id": 12, 
+   "type_limit": "近战", 
+   "team_type": 1
+  }, 
+  {
+   "team_use": 1.0, 
+   "initial_team": "0,0,0,0,0,0,0,0,0,0", 
+   "id": 13, 
+   "type_limit": "近战", 
+   "team_type": 1
+  }, 
+  {
+   "team_use": 1.0, 
+   "initial_team": "0,0,0,0,0,0,0,0,0,0", 
+   "id": 14, 
+   "type_limit": "近战", 
+   "team_type": 1
+  }, 
+  {
+   "team_use": 1.0, 
+   "initial_team": "0,0,0,0,0,0,0,0,0,0", 
+   "id": 15, 
+   "type_limit": "近战", 
+   "team_type": 1
+  }, 
+  {
+   "team_use": 1.0, 
+   "initial_team": "0,0,0,0,0,0,0,0,0,0", 
+   "id": 16, 
+   "type_limit": "近战", 
+   "team_type": 1
+  }
+ ]
+}
