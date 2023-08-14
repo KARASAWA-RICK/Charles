@@ -3,14 +3,7 @@ const { ccclass, property } = _decorator;
 
 @ccclass("ConfigMgr")
 export class ConfigMgr {
-  /**
-   *单例
-   *
-   * @private
-   * @static
-   * @type {ConfigMgr}
-   * @memberof ConfigMgr
-   */
+  //单例
   private static _ins: ConfigMgr = null!;
   public static get ins() {
     if (!this._ins) {

@@ -111,7 +111,7 @@ export default class ResMgr {
                 this._atlasMap[asset.name] = asset;
             }
           }
-          //将加载的JSON资源存入_jsonAssetMap
+          //将加载的JSON资源存入_jsonAssetMap，并存入ConfigMgr的存配置表的对象
           if (type == AssetType.Json) {
             for (let i = 0; i < assets.length; i++) {
               asset = assets[i];
