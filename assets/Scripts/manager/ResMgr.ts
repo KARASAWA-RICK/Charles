@@ -13,6 +13,10 @@ import { ConfigMgr } from "./ConfigMgr";
 import { Singlton } from "../Base/Singleton";
 
 export default class ResMgr extends Singlton {
+  //懒汉单例
+  static get ins() {
+    return super.GetInstance<ResMgr>();
+  }
   //存Bundle的对象
   private _abBundleMap: Object = {};
   //存SpriteAtlas对象 的对象
@@ -24,11 +28,6 @@ export default class ResMgr extends Singlton {
   public _loadStemp = null;
   private loadTime = 0;
   _totalTime = 0;
-
-  //懒汉单例
-  static get ins() {
-    return super.GetInstance<ResMgr>();
-  }
 
   //加载资源（将资源分类存放在不同对象中）
 

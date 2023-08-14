@@ -6,15 +6,14 @@ const { ccclass, property } = _decorator;
 
 @ccclass("PoolMgr")
 export class PoolMgr extends Singlton {
-  //存 存prefab实例的对象 的对象（对象池）
-  public _dictPool: any = {};
-  //存prefab的对象
-  public _dictPrefab: any = {};
-
   //懒汉单例
   static get ins() {
     return super.GetInstance<PoolMgr>();
   }
+  //存 存prefab实例的对象 的对象（对象池）
+  public _dictPool: any = {};
+  //存prefab的对象
+  public _dictPrefab: any = {};
 
   //存取/清理/复制prefab实例
 

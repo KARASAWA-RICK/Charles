@@ -7,6 +7,11 @@ const { ccclass, property } = _decorator;
 
 @ccclass("AudioMgr")
 export class AudioMgr extends Singlton {
+  //懒汉单例
+  public static get ins() {
+    return super.GetInstance<AudioMgr>();
+  }
+
   //单次播放的音频组件
   private _audioComp: AudioSourceComponent = null;
 
@@ -15,12 +20,6 @@ export class AudioMgr extends Singlton {
 
   //当前循环播放的音频名称
   private _curLoopAudioName: string = "";
-
-  //创建单例
-
-  public static get ins() {
-    return super.GetInstance<AudioMgr>();
-  }
 
   //初始化_audioComp与_audioLoopComp两个音频组件
   protected init() {
