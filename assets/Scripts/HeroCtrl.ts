@@ -50,6 +50,7 @@ import { GameView } from "./view/GameView";
 import { BossBulletCtrl } from "./BossBulletCtrl";
 import { BossCtrl } from "./BossCtrl";
 import { DotCtrl } from "./DotCtrl";
+import { EventMgr } from "./manager/EventMgr";
 const { ccclass, property } = _decorator;
 
 @ccclass("HeroCtrl")
@@ -496,14 +497,14 @@ export class HeroCtrl extends Component {
         Tools.convertTo2D(this.posStart)
       ) >= this.startDistance
     ) {
-      Global.eventTarget.emit(Events.StartPlay);
+      EventMgr.ins.emit(Events.StartPlay);
       console.log("位移判断成功");
     }
   }
 
   //玩家死亡
   Die() {
-    Global.eventTarget.emit(Events.Die);
+    EventMgr.ins.emit(Events.Die);
     //玩家入池
     PoolMgr.ins.putNode(this.node);
   }

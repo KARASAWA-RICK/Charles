@@ -164,6 +164,6 @@ export class Global extends Component {
   //层级节点数组
   static layer: Node[] = [];
 
-  //全局事件监听者
-  static eventTarget: EventMgr = new EventMgr();
+  /* //全局事件监听者
+  static eventTarget: EventMgr = new EventMgr(); */
 }

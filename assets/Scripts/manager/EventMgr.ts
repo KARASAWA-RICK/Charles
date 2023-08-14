@@ -3,6 +3,15 @@ const { ccclass, property } = _decorator;
 
 @ccclass("EventMgr")
 export class EventMgr {
+  //定义事件管理类懒汉式单例
+  private static _ins: EventMgr = null;
+  public static get ins() {
+    if (!this._ins) {
+      this._ins = new EventMgr();
+    }
+    return this._ins;
+  }
+
   private _handlers: { [key: string]: any[] } = {};
 
   /**

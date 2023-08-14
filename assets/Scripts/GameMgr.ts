@@ -43,6 +43,7 @@ import { BossBulletCtrl } from "./BossBulletCtrl";
 import { ResultView } from "./view/ResultView";
 import { PauseView } from "./view/PauseView";
 import { RankView } from "./view/RankView";
+import { EventMgr } from "./manager/EventMgr";
 const { ccclass, property } = _decorator;
 
 @ccclass("GameMgr")
@@ -417,14 +418,14 @@ export class GameMgr extends Component {
     this.Init();
     //打开事件监听
     console.log("打开事件监听");
-    Global.eventTarget.on(
+    EventMgr.ins.on(
       Events.StartPlay,
       () => {
         this.startPlay();
       },
       this
     );
-    Global.eventTarget.on(
+    EventMgr.ins.on(
       Events.Die,
       () => {
         this.afterDeath();
@@ -435,14 +436,14 @@ export class GameMgr extends Component {
 
   onDisable() {
     this.unscheduleAllCallbacks();
-    Global.eventTarget.off(
+    EventMgr.ins.off(
       Events.StartPlay,
       () => {
         this.startPlay();
       },
       this
     );
-    Global.eventTarget.off(
+    EventMgr.ins.off(
       Events.Die,
       () => {
         this.afterDeath();
