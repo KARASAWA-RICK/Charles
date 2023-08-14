@@ -12,6 +12,7 @@ import {
   SpriteAtlas,
 } from "cc";
 import { PauseView } from "./view/PauseView";
+import { EventMgr } from "./manager/EventMgr";
 const { ccclass, property } = _decorator;
 //遥感相关
 
@@ -164,5 +165,5 @@ export class Global extends Component {
   static layer: Node[] = [];
 
   //全局事件监听者
-  static eventTarget: EventTarget = new EventTarget();
+  static eventTarget: EventMgr = new EventMgr();
 }
