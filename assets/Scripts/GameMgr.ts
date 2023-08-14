@@ -1,36 +1,7 @@
-import {
-  _decorator,
-  Component,
-  Node,
-  EventTarget,
-  Prefab,
-  instantiate,
-  find,
-  Vec3,
-  view,
-  Vec2,
-  v2,
-  Collider2D,
-  IPhysics2DContact,
-  PhysicsSystem2D,
-  Contact2DType,
-  math,
-  v3,
-  director,
-  Canvas,
-} from "cc";
+import { _decorator, Component, Node, find, Vec3, view, math, v3 } from "cc";
 import { Tools } from "./Tools";
-import {
-  BOSS_TYPE,
-  BULLET_TYPE,
-  COLLIDER2D_TYPE,
-  Events,
-  Global,
-  ITEM_TYPE,
-  ui,
-} from "./Global";
+import { Events, ui } from "./Global";
 import { ItemCtrl } from "./ItemCtrl";
-import { BulletCtrl } from "./BulletCtrl";
 import { HeroCtrl } from "./HeroCtrl";
 import { BossCtrl } from "./BossCtrl";
 import ResMgr from "./manager/ResMgr";
@@ -38,7 +9,6 @@ import { PoolMgr } from "./manager/PoolMgr";
 import { EnemyCtrl } from "./EnemyCtrl";
 import { HomeView } from "./view/HomeView";
 import { GameView } from "./view/GameView";
-import { DotCtrl } from "./DotCtrl";
 import { BossBulletCtrl } from "./BossBulletCtrl";
 import { ResultView } from "./view/ResultView";
 import { PauseView } from "./view/PauseView";
@@ -450,6 +420,5 @@ export class GameMgr extends Component {
       },
       this
     );
-    //this.eventLitsener.off(Events.Reset, () => { this.reset() })
   }
 }

@@ -4,7 +4,6 @@ import {
   AudioClip,
   instantiate,
   Node,
-  SkinnedMeshRenderer,
   SpriteAtlas,
 } from "cc";
 import { Global, AssetType } from "../Global";

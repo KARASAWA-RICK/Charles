@@ -1,4 +1,4 @@
-import { _decorator, Component, JsonAsset, Node } from "cc";
+import { _decorator } from "cc";
 import { Singlton } from "../Base/Singleton";
 const { ccclass, property } = _decorator;
 
@@ -68,6 +68,6 @@ export class ConfigMgr extends Singlton {
 
     console.log("queryOne==>>" + tableName + "," + key);
 
-    return table[key];
+    return JSON.parse(table[key]);
   }
 }
