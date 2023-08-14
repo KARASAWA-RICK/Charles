@@ -1,15 +1,12 @@
 import { _decorator } from "cc";
+import { Singlton } from "../Base/Singleton";
 const { ccclass, property } = _decorator;
 
 @ccclass("EventMgr")
-export class EventMgr {
-  //定义事件管理类懒汉式单例
-  private static _ins: EventMgr = null;
+export class EventMgr extends Singlton {
+  //懒汉单例
   public static get ins() {
-    if (!this._ins) {
-      this._ins = new EventMgr();
-    }
-    return this._ins;
+    return super.GetInstance<EventMgr>();
   }
 
   private _handlers: { [key: string]: any[] } = {};

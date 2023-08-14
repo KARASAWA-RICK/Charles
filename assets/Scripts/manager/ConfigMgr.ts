@@ -1,15 +1,12 @@
 import { _decorator, Component, JsonAsset, Node } from "cc";
+import { Singlton } from "../Base/Singleton";
 const { ccclass, property } = _decorator;
 
 @ccclass("ConfigMgr")
-export class ConfigMgr {
-  //单例
-  private static _ins: ConfigMgr = null!;
+export class ConfigMgr extends Singlton {
+  //懒汉单例
   public static get ins() {
-    if (!this._ins) {
-      this._ins = new ConfigMgr();
-    }
-    return this._ins;
+    return super.GetInstance<ConfigMgr>();
   }
 
   /**

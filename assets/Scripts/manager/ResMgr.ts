@@ -10,8 +10,9 @@ import {
 import { Global, AssetType } from "../Global";
 import { PoolMgr } from "./PoolMgr";
 import { ConfigMgr } from "./ConfigMgr";
+import { Singlton } from "../Base/Singleton";
 
-export default class ResMgr {
+export default class ResMgr extends Singlton {
   //存Bundle的对象
   private _abBundleMap: Object = {};
   //存SpriteAtlas对象 的对象
@@ -24,13 +25,9 @@ export default class ResMgr {
   private loadTime = 0;
   _totalTime = 0;
 
-  //定义资源管理类懒汉式单例
-  private static _ins: ResMgr = null;
-  public static get ins() {
-    if (!this._ins) {
-      this._ins = new ResMgr();
-    }
-    return this._ins;
+  //懒汉单例
+  static get ins() {
+    return super.GetInstance<ResMgr>();
   }
 
   //加载资源（将资源分类存放在不同对象中）
