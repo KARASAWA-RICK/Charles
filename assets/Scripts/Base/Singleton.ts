@@ -4,19 +4,12 @@
  * @export
  * @class Singlton
  */
-export class Singlton {
+export class Singleton {
   private static _ins: any = null;
 
-  // 可选的初始化方法
-  protected init?(): void;
-
-  public static GetInstance<T extends Singlton>(): T {
+  public static GetInstance<T extends Singleton>(): T {
     if (!this._ins) {
       this._ins = new this();
-      // 若有初始化方法则直接调用
-      if (typeof this._ins.init === "function") {
-        this._ins.init();
-      }
     }
     return this._ins;
   }

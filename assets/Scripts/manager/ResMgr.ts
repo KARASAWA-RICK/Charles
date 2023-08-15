@@ -9,9 +9,9 @@ import {
 import { Global, AssetType } from "../Global";
 import { PoolMgr } from "./PoolMgr";
 import { ConfigMgr } from "./ConfigMgr";
-import { Singlton } from "../Base/Singleton";
+import { Singleton } from "../Base/Singleton";
 
-export default class ResMgr extends Singlton {
+export default class ResMgr extends Singleton {
   //懒汉单例
   static get ins() {
     return super.GetInstance<ResMgr>();

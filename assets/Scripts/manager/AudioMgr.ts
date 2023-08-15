@@ -1,17 +1,22 @@
 //管理音频的单例
 import { AudioClip, AudioSourceComponent, _decorator } from "cc";
 import ResMgr from "./ResMgr";
-import { Singlton } from "../Base/Singleton";
+import { Singleton } from "../Base/Singleton";
 
 const { ccclass, property } = _decorator;
 
 @ccclass("AudioMgr")
-export class AudioMgr extends Singlton {
+export class AudioMgr extends Singleton {
   //懒汉单例
   public static get ins() {
     return super.GetInstance<AudioMgr>();
   }
 
+  constructor() {
+    //子类构造函数里必须先调用父类构造函数
+    super();
+    this.init();
+  }
   //单次播放的音频组件
   private _audioComp: AudioSourceComponent = null;
 

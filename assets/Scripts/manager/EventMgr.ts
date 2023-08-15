@@ -1,9 +1,9 @@
 import { _decorator } from "cc";
-import { Singlton } from "../Base/Singleton";
+import { Singleton } from "../Base/Singleton";
 const { ccclass, property } = _decorator;
 
 @ccclass("EventMgr")
-export class EventMgr extends Singlton {
+export class EventMgr extends Singleton {
   //懒汉单例
   public static get ins() {
     return super.GetInstance<EventMgr>();

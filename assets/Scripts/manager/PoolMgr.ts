@@ -1,11 +1,11 @@
 //管理prefab与prefab实例存储的单例类
 import { _decorator, Prefab, Node, instantiate, NodePool, Vec3 } from "cc";
-import { Singlton } from "../Base/Singleton";
+import { Singleton } from "../Base/Singleton";
 
 const { ccclass, property } = _decorator;
 
 @ccclass("PoolMgr")
-export class PoolMgr extends Singlton {
+export class PoolMgr extends Singleton {
   //懒汉单例
   static get ins() {
     return super.GetInstance<PoolMgr>();
