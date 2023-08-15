@@ -30,13 +30,11 @@ export class loading extends Component {
     await ResMgr.ins.loadRes(1, AssetType.Sound, 0.32);
     //加载Bundle1中的json，进度+0.2
     await ResMgr.ins.loadRes(1, AssetType.Json, 0.2);
+    Global.LoadingRate = 0;
+    director.loadScene("game");
   }
 
   update(deltaTime: number) {
-    //如果进度完成，则加载进度清0，切换游戏场景
-    if (Global.LoadingRate >= 1.01) {
-      Global.LoadingRate = 0;
-      director.loadScene("game");
-    }
+    //通过LoadingRate更新进度条
   }
 }
