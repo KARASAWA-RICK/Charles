@@ -1,11 +1,5 @@
 //管理资源加载的单例类
-import {
-  assetManager,
-  AudioClip,
-  instantiate,
-  Node,
-  SpriteAtlas,
-} from "cc";
+import { assetManager, AudioClip, instantiate, Node, SpriteAtlas } from "cc";
 import { Global, AssetType } from "../Global";
 import { PoolMgr } from "./PoolMgr";
 import { ConfigMgr } from "./ConfigMgr";
@@ -71,8 +65,8 @@ export default class ResMgr extends Singleton {
       this._abBundleMap[index].loadDir(
         type.path,
         type.type,
+        //每加载完一个资源就按比例更新进度
         (finished: number, total: number) => {
-          //更新当前加载进度
           if (ratio > 0) Global.LoadingRate = rate + (ratio * finished) / total;
         },
         (err: any, assets: any[]) => {
