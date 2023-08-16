@@ -1,6 +1,6 @@
 //全局通用函数
 //用Tools类封装全局静态方法
-import { _decorator, Sprite, SpriteFrame, Texture2D, ImageAsset, Node, tween, UIMeshRenderer, Layers, Vec3, sys, UITransform, Widget, size, view, Vec2, v3, v2, director, instantiate, Canvas } from 'cc';
+import { _decorator, Sprite, SpriteFrame, Texture2D, ImageAsset, Node, tween, UIMeshRenderer, Layers, Vec3, sys, UITransform, Widget, size, view, Vec2, v3, v2, director, instantiate, Canvas, AnimationClip, animation, SpriteAtlas } from 'cc';
 import ResMgr from './manager/ResMgr';
 import { Global } from './Global';
 
@@ -36,6 +36,54 @@ export function load(key: string, type = 1) {
     }
 }
 
+//创建节点
+export const createNode = (name: string = "", parent: Node) => {
+  const node = new Node(name);
+  node.setParent(parent);
+  node.layer = Layers.Enum.UI_2D;
+  node.addComponent(UITransform);
+  return node;
+};
+
+//创建动画
+export const createAnimationClip = (
+  Atlas: string,
+  duration: number,
+  wrapMode: AnimationClip.WrapMode
+) => {
+  //获取序列帧数组
+  const spriteAtlas: SpriteAtlas = ResMgr.ins.getAtlas(Atlas);
+  const spriteFrames: SpriteFrame[] = spriteAtlas.getSpriteFrames();
+  const speed = duration / spriteFrames.length;
+  const frames: [number, SpriteFrame][] = spriteFrames.map(
+    (item: SpriteFrame, index: number) => [speed * index, item]
+  );
+
+  //创建动画
+  const animationClip = new AnimationClip();
+
+  //创建属性轨道
+  const track = new animation.ObjectTrack();
+
+  //确定轨道路径
+  track.path = new animation.TrackPath()
+    .toComponent(Sprite)
+    .toProperty("spriteFrame");
+
+  //设置序列帧
+  track.channel.curve.assignSorted(frames);
+
+  //添加属性轨道
+  animationClip.addTrack(track);
+
+  //设置动画周期
+  animationClip.duration = duration;
+
+  //设置循环模式
+  animationClip.wrapMode = wrapMode;
+
+  return animationClip;
+};
 
 
 //封装常用的全局静态方法
